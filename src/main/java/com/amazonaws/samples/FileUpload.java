@@ -36,11 +36,11 @@ public class FileUpload {
 
 	        AmazonS3 s3 = AmazonS3ClientBuilder.standard()
 	            .withCredentials(new AWSStaticCredentialsProvider(credentials))
-	            .withRegion("us-west-2")
+	            .withRegion("us-east-2")
 	            .build();
 
-	        String bucketName = "my-first-s3-bucket-sanjeev1b3eeaab-b29a-44c2-9720-09fbf065b2e0/Test_V2";//"my-first-s3-bucket-sanjeev" + UUID.randomUUID();
-	        String key = "MyObjectKey";
+	        String bucketName = "lambda-comprehend-sentiment";//"my-first-s3-bucket-sanjeev" + UUID.randomUUID();
+	        String key = "Sanjeev_Feedback_1";
 
 	        System.out.println("===========================================");
 	        System.out.println("Getting Started with Amazon S3");
@@ -55,8 +55,8 @@ public class FileUpload {
 	             * You can optionally specify a location for your bucket if you want to
 	             * keep your data closer to your applications or users.
 	             */
-	            System.out.println("Creating bucket " + bucketName + "\n");
-	            s3.createBucket(bucketName);
+	          //  System.out.println("Creating bucket " + bucketName + "\n");
+	          //  s3.createBucket(bucketName);
 
 	            /*
 	             * List the buckets in your account
