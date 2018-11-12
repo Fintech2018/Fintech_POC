@@ -115,7 +115,7 @@ public class SentimentAnalysisHandler implements RequestHandler<S3Event, String>
  
             JSONArray docs = output.toJSONArray(output.names());//getJSONArray("");
  
-            File file=new File("JSONSEPERATOR_CSV.csv");
+            File file=new File("/tmp/JSONSEPERATOR_CSV.csv");
             String csv = CDL.toString(docs);
             FileUtils.writeStringToFile(file, csv);
             System.out.println("Data has been Sucessfully Writeen to "+file);
@@ -128,7 +128,7 @@ public class SentimentAnalysisHandler implements RequestHandler<S3Event, String>
     
     private File convertToText(String json) {
         try {
-            File file=new File("JSONSEPERATOR_TXT.txt");
+            File file=new File("/tmp/JSONSEPERATOR_TXT.txt");
             FileUtils.writeStringToFile(file, json);
             System.out.println("Data has been Sucessfully Writeen to "+file);
             return file;
@@ -145,7 +145,7 @@ public class SentimentAnalysisHandler implements RequestHandler<S3Event, String>
 		 * Write object to file
 		 */
 		try {
-			File output=new File("result.json");
+			File output=new File("/tmp/result.json");
 			mapper.writeValue(output, object);//Plain JSON
 			return output;
 		} catch (Exception e) {
